@@ -8,7 +8,12 @@ const app = express();
 const socket = require('socket.io');
 require('dotenv').config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://snappy-silk.vercel.app',
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 app.use('/api/auth', userRoute);
@@ -30,7 +35,7 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = socket(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://snappy-silk.vercel.app',
     credentials: true,
   },
 });
