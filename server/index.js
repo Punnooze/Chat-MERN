@@ -29,9 +29,11 @@ mongoose
   })
   .catch((err) => console.logn(err.message));
 
-const server = app.listen(process.env.PORT, () =>
-  console.log(`connected to port ${process.env.PORT}`)
-);
+// const server = app.listen(process.env.PORT, () =>
+//   console.log(`connected to port ${process.env.PORT}`)
+// );
+
+const server = 'https://chat-mern-api.vercel.app/';
 
 const io = socket(server, {
   cors: {
