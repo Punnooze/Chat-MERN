@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoutes');
 const messsageRoute = require('./routes/messagesRoutes');
@@ -8,7 +8,7 @@ const app = express();
 const socket = require('socket.io');
 require('dotenv').config();
 
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', userRoute);
