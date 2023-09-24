@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoutes');
 const messsageRoute = require('./routes/messagesRoutes');
@@ -8,12 +8,12 @@ const app = express();
 const socket = require('socket.io');
 require('dotenv').config();
 
-app.use(
-  cors({
-    origin: 'https://snappy-punnoose.netlify.app',
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: 'https://snappy-punnoose.netlify.app',
+//     credentials: true,
+//   })
+// );
 
 app.use(express.json());
 
@@ -37,7 +37,7 @@ const server = app.listen(process.env.PORT, () =>
 
 const io = socket(server, {
   cors: {
-    origin: 'https://chat-mern-api.vercel.app',
+    origin: 'https://snappy-punnoose.netlify.app',
     credentials: true,
   },
 });
