@@ -10,11 +10,10 @@ require('dotenv').config();
 
 app.use(
   cors({
-    origin: 'https://snappy-silk.vercel.app',
+    origin: 'https://snappy-punnoose.netlify.app',
     credentials: true,
   })
 );
-
 
 app.use(express.json());
 
@@ -35,11 +34,9 @@ const server = app.listen(process.env.PORT, () =>
   console.log(`connected to port ${process.env.PORT}`)
 );
 
-// const server = 'https://chat-mern-api.vercel.app';
-
 const io = socket(server, {
   cors: {
-    origin: 'https://snappy-silk.vercel.app',
+    origin: 'https://snappy-punnoose.netlify.app',
     credentials: true,
   },
 });
@@ -60,3 +57,4 @@ io.on('connection', (socket) => {
     }
   });
 });
+

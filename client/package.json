@@ -2,6 +2,7 @@
   "name": "chat-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@multiavatar/multiavatar": "^1.0.7",
     "@testing-library/jest-dom": "^5.17.0",
@@ -15,6 +16,7 @@
     "interweave": "^13.1.0",
     "interweave-emoji": "^7.0.0",
     "interweave-emoji-picker": "^7.0.0",
+    "netlify-cli": "^16.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",
