@@ -34,9 +34,10 @@ const server = app.listen(process.env.PORT, () =>
   console.log(`connected to port ${process.env.PORT}`)
 );
 
+
 const io = socket(server, {
   cors: {
-    origin: 'https://snappy-punnoose.netlify.app',
+    origin: 'https://chat-mern-api.vercel.app',
     credentials: true,
   },
 });
