@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoutes');
 const messsageRoute = require('./routes/messagesRoutes');
@@ -8,13 +8,7 @@ const app = express();
 const socket = require('socket.io');
 require('dotenv').config();
 
-// app.use(
-//   cors({
-//     origin: 'https://snappy-punnoose.netlify.app',
-//     credentials: true,
-//   })
-// );
-
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', userRoute);
@@ -34,10 +28,9 @@ const server = app.listen(process.env.PORT, () =>
   console.log(`connected to port ${process.env.PORT}`)
 );
 
-
 const io = socket(server, {
   cors: {
-    origin: 'https://snappy-punnoose.netlify.app',
+    origin: process.env.ORIGIN,
     credentials: true,
   },
 });
@@ -58,4 +51,3 @@ io.on('connection', (socket) => {
     }
   });
 });
-
