@@ -1,4 +1,4 @@
-export const host = 'https://snappy-api-smoky.vercel.app';
+export const host = 'https://snappy-chatapp-94t3.onrender.com/';
 // export const host = 'http://localhost:5000';
 export const registerRoute = `${host}/api/auth/register`;
 export const loginRoute = `${host}/api/auth/login`;
